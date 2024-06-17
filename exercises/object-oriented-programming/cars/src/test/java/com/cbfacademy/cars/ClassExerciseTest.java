@@ -6,6 +6,8 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.params.provider.Arguments;
 
+import com.cbfacademy.cars.Car;
+
 public abstract class ClassExerciseTest {
     protected static Stream<Arguments> getCarArguments() {
         List<HashMap<String, Object>> cars = getCarValues();
@@ -17,7 +19,7 @@ public abstract class ClassExerciseTest {
                     String colour = (String) map.get("colour");
                     int year = (int) map.get("year");
 
-                    return Arguments.of(new Car(make, model, colour, year), make, model, colour, year);
+                    return Arguments.of(new Car(make, model, year, colour), make, model, colour, year); //missing
                 });
     }
 

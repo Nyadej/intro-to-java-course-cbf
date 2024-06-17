@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CarTest extends ClassExerciseTest {
 
     @ParameterizedTest
-    @MethodSource("getCarArguments")
+    @MethodSource("getCarArguments") 
     @DisplayName("Car object has valid getMake() method")
     public void testCarObjectHasValidGetMakeMethod(Car car, String make, String model, String colour, int year) {
         assertEquals(make, car.getMake());
@@ -35,7 +35,7 @@ public class CarTest extends ClassExerciseTest {
     @MethodSource("getCarArguments")
     @DisplayName("Car object has valid getColour() method")
     public void testCarObjectHasValidGetColourMethod(Car car, String make, String model, String colour, int year) {
-        assertEquals(year, car.getYear());
+        assertEquals(colour, car.getColour());
     }
 
     @ParameterizedTest
