@@ -2,7 +2,7 @@ package com.cbfacademy.search;
 
 public class BinarySearch {
     //BINARY SEARCH - finding the position of a target value within a sorted array. 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
     
         int array[] = new int[100]; //an array of integers of size 100
         int target = 57; //target value being searched for
@@ -11,7 +11,7 @@ public class BinarySearch {
             array[i] = i;
         }
     
-        int index = binarySearch(array, target); //
+        int index = search(array, target); //
     
         if(index == -1) { //if target is not found, -1 will be returned
             System.err.println(target + " not found");
@@ -19,9 +19,9 @@ public class BinarySearch {
             System.out.println("Target found at: " + index);
         }
     
-    }
+    }*/
     
-    private static int binarySearch(int[] array, int target) { //creating binary function with two integers
+    public int search(int[] array, int target) { //creating binary function with two integers
     
         int low = 0; // beginning index of array
         int high = array.length - 1; // end index of array

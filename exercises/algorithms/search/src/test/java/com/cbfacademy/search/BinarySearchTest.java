@@ -16,7 +16,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 @DisplayName(value = "Binary Search Exercise")
 public class BinarySearchTest {
-    Search binarySearch;
+    BinarySearch binarySearch;
     static int[] testArray = new int[10000];
 
     @BeforeEach
