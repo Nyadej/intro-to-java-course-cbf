@@ -1,8 +1,10 @@
 package com.cbfacademy;
 import java.util.*;
 
+//  user defined exceptions = custom exceptions 
+
 public class FileExtension {
-    public boolean check(String filename) throws FilenameException {
+    public boolean check(String filename) th rows FilenameException {
         if (filename == null || filename.isEmpty()) {
             throw new FilenameException("Filename is null or empty");
         }
@@ -20,7 +22,7 @@ public class FileExtension {
                 } else {
                     resultMap.put(filename, 0);
                 }
-            } catch (FilenameException ex) {
+            } catch (FilenameException ex) { /*Therefore code will not be interrupted because Exception has been caught */
                 resultMap.put(filename, -1);
             }
         } 
