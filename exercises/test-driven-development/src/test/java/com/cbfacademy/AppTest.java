@@ -26,27 +26,13 @@ public class AppTest {
         assertEquals("1", FizzBuzz.get(1));
         assertEquals("2", FizzBuzz.get(2));
         assertEquals("Fizz", FizzBuzz.get(3));
+        assertEquals("4", FizzBuzz.get(4));
     }
 
-    /*@Test
-    @DisplayName("return 'Buzz' when the input is divisible by 5")
-    public void testReturnBuzz() {
-        final FizzBuzz fizzBuzz = new FizzBuzz();
-            
-            assertThat(fizzBuzz, is(15));
-        }
-
     @Test
-    @DisplayName("return 'FizzBuzz' when the input is 15")
-    public void testReturnFizzBuzz() {
-        final FizzBuzz fizzBuzz = new FizzBuzz();
-
-            assertThat(fizzBuzz, is(15));
+    @DisplayName("return 'Buzz' when the input is divisible by 5")
+    public void printsBuzz() {
+        assertEquals("Buzz", FizzBuzz.get(5));
         }
 
-    public void createsAnApp() {
-        final App app = new App();
-
-        assertThat(app, is(notNullValue()));
-    }*/
 }
