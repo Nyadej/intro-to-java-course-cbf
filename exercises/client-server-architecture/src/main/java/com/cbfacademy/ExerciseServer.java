@@ -20,6 +20,9 @@ public class ExerciseServer {
                 System.out.println("Received message from client: " + message);
             }
 
+            // Close the client socket
+            clientSocket.close();
+
             // Close the server socket after use
             serverSocket.close();
         } catch (Exception e) {
