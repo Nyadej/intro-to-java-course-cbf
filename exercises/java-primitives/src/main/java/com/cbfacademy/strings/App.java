@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class App {
-    public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
     }
 
     public static String concatenate(String word1, String word2, String word3) {
@@ -20,24 +20,19 @@ public class App {
 
     public static String format(String item, int quantity, double price) {
 
-        // TODO: Write code to return a string formatted as follows: "Item: [item]. Price: £[amount]. Quantity: [quantity]". The date should be formatted as DD/MM/YYYY, e.g. 24/10/2023
-        LocalDate currentDate = LocalDate.now();
+        // TODO: Write code to return a string formatted as follows: "Item: [item]. Price: £[price]. Quantity: [quantity]". The price should be formatted to two decimal places, e.g. 99.99
 
-        //Create a date formatter with the pattern ...
+        // Create a date formatter with the pattern "dd/MM/yyyy"
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         
         // Format the current date to a string
-        String formattedDate = currentDate.format(formatter);
+        String formattedDate = LocalDate.now().format(formatter);
         
         // Format the final string with placeholders
-        String result = String.format("Item: %s. Price: £%.2f. Quantity: %d", 
-                                      item, price, quantity);
+        String result = String.format("Item: %s. Price: £%.2f. Quantity: %d. Date: %s", 
+                                      item, price, quantity, formattedDate);
         
         // Return the formatted string
         return result;
-
     }
-        // TODO: Write code to return a string formatted as follows: "Item: [item]. Price: £[price]. Quantity: [quantity]". The price should be formatted to two decimal places, e.g. 99.99
-        System.out.println(String.format("Item: %s. Price: £%.2f. Quantity: %d", item, price, quantity));
-
 }
