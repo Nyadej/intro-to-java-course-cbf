@@ -22,4 +22,10 @@ public class LeapTest {
         assertTrue(Leap.isLeap(1900));
     }
 
+    @Test
+    @DisplayName("years divisible by 4 but not by 100 are leap years")
+    public void divisibleBy4() {
+        assertTrue(Leap.isLeap(2008));
+    }
+
 }
