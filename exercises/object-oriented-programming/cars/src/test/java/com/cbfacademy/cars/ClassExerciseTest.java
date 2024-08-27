@@ -6,8 +6,6 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.params.provider.Arguments;
 
-import com.cbfacademy.cars.Car;
-
 public abstract class ClassExerciseTest {
     protected static Stream<Arguments> getCarArguments() {
         List<HashMap<String, Object>> cars = getCarValues();
