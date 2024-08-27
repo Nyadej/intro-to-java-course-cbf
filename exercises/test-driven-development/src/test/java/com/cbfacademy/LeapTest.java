@@ -28,4 +28,10 @@ public class LeapTest {
         assertTrue(Leap.isLeap(2008));
     }
 
+    @Test
+    @DisplayName("years not divisible by 4 are not leap years")
+    public void notDivisibleBy4() {
+        assertTrue(Leap.isLeap(2017));
+    }
+
 }
