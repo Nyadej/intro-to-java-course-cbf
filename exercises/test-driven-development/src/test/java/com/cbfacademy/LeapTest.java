@@ -1,6 +1,7 @@
 package com.cbfacademy;
 
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.DisplayName;
@@ -19,7 +20,7 @@ public class LeapTest {
     @Test
     @DisplayName("years divisible by 100 but not by 400 are not leap years")
     public void divisibleBy100() {
-        assertTrue(Leap.isLeap(1900));
+        assertFalse(Leap.isLeap(1900));
     }
 
     @Test
@@ -31,7 +32,7 @@ public class LeapTest {
     @Test
     @DisplayName("years not divisible by 4 are not leap years")
     public void notDivisibleBy4() {
-        assertTrue(Leap.isLeap(2017));
+        assertFalse(Leap.isLeap(2017));
     }
 
 }
