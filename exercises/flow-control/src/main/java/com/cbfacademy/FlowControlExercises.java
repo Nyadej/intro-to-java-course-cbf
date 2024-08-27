@@ -8,7 +8,6 @@ import java.util.Map;
 public class FlowControlExercises {
 
     public List<String> fizzBuzz(List<Integer> numbers) {
-        // TODO - Implement this method such that
         //  it creates a list where for each element of the input list ${numbers}
        List<String> element = new ArrayList<>(); // didn't think of this
        for (int num : numbers) {
@@ -27,7 +26,6 @@ public class FlowControlExercises {
         
 
     public String whichMonth(Integer number) {
-        // TODO - Implement this method such that
         //  - it returns the month corresponding to the input ${number}
             switch (number) {
             case 1: // no need to add if (number >=1 && number <=12) because this has already been handled by the switch
@@ -60,7 +58,6 @@ public class FlowControlExercises {
         }
 
     public Map<String, Integer> sumOfOddsAndSumOfEvens() {
-        // TODO - Implement this method such that
         //  - creates and initialises a list of 100 numbers - from 1 to 100
        List<Integer> sumOfList = new ArrayList<>(100); //specifies initial capacity of the list
         //List<Integer> ret = IntStream.rangeClosed(1, 100).boxed().collect(Collectors.toList()); 
@@ -90,7 +87,6 @@ public class FlowControlExercises {
     }
 
     public List<Integer> reverse(ArrayList<Integer> numbers) {
-        // TODO - Implement this method such that
         int length = numbers.size();
         List<Integer> reverseList = new ArrayList<>(length);
         for (int i = length -1; i >= 0; i--){
