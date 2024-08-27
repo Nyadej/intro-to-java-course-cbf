@@ -4,7 +4,7 @@ import java.util.*;
 //  user defined exceptions = custom exceptions 
 
 public class FileExtension {
-    public boolean check(String filename) th rows FilenameException {
+    public boolean check(String filename) throws FilenameException {
         if (filename == null || filename.isEmpty()) {
             throw new FilenameException("Filename is null or empty");
         }
