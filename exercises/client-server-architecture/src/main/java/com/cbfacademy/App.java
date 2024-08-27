@@ -9,18 +9,30 @@ import java.net.URL;
 
 public class App {
     public static void main(String[] args) {
-    try {
-        URL url = new URI("https://www.cbfacademy.com/").toURL(); // create a URL object with the website URL
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection(); // opening a connection to the website - ?FLAG
-                                                                                // Open stream doesn't need a connection to be created, this is all done in the open stream method
-            connection.setRequestMethod("GET"); // the action that I take when the connection is complete (GET//POST//UPDATE//DELE)
-                                                        
-        try { // open  connection to the URL
-            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream())) // create a BufferedReader to read the content from the URL
-        {
-            String line; {
-            while ((line = reader.readLine()) !=null) { // read and print the content line by line until there are no more lines to read
-                System.out.println(line); // prints each line to the screen
+        String urlString = "https://codingblackfemales.com/";
+
+        try {
+            // Create a URI object from the string
+            URI uri = new URI(urlString);
+            
+            // Convert the URI to a URL
+            URL url = uri.toURL();
+            
+            // Open a connection to the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Use try-with-resources to automatically close the BufferedReader
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+                String line;
+                
+                // Read each line from the website and print it
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
             }
+        } catch (Exception e) {
+            // Print any errors that occur
+            e.printStackTrace();
         }
-        } catch (IOException e) 
+    }
+}
