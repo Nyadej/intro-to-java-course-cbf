@@ -6,7 +6,8 @@ public class GameFactory {
      *
      * @return A dice game.
      */
-    public static DiceGame create() {
-        return new DiceGame();
-    }
+    public static Game create() {
+            return new DiceGame();
+        }
 }
+
