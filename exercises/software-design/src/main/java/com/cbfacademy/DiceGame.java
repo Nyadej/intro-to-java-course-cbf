@@ -6,8 +6,8 @@ public class DiceGame implements Game { // DiceGame will now follow the contract
     private int targetScore = 30;
 
     public DiceGame(Player player1, Player player2) {
-        this.player1 = player1;
-        this.player2 = player2;
+        this.player1 = PlayerFactory.create();
+        this.player2 = PlayerFactory.create();
         player1.setName("Player 1");
         player2.setName("Player 2");
     }
