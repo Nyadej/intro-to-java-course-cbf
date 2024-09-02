@@ -1,13 +1,13 @@
 package com.cbfacademy;
 
 public class DiceGame implements Game {
-    private DicePlayer player1;
-    private DicePlayer player2;
+    private Player player1;
+    private Player player2;
     private int targetScore = 30;
 
-    public DiceGame() {
-        player1 = new DicePlayer();
-        player2 = new DicePlayer();
+    public DiceGame(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
         player1.setName("Player 1");
         player2.setName("Player 2");
     }
