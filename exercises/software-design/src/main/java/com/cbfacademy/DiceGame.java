@@ -1,6 +1,6 @@
 package com.cbfacademy;
 
-public class DiceGame implements Game {
+public class DiceGame implements Game { // DiceGame will now follow the contract defined by the Game interface
     private Player player1;
     private Player player2;
     private int targetScore = 30;

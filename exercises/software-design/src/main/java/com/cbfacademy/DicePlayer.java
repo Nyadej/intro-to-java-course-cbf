@@ -1,6 +1,6 @@
 package com.cbfacademy;
 
-public class DicePlayer implements Player {
+public class DicePlayer implements Player { // This means DicePlayer follows the Player interface, making it more flexible
     private String name;
 
     public String getName() {
