@@ -5,9 +5,11 @@ public class DiceGame implements Game {
     private Player player2;
     private int targetScore = 30;
 
-    public DiceGame(Player player1, Player player2) {
+    public DiceGame(Player player1, Player player2) { // change the constructor to accept Player objects
         this.player1 = player1;
         this.player2 = player2;
+        player1.setName("Player 1");
+        player2.setName("Player 2");
     }
 
     public String play() {
