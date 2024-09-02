@@ -6,7 +6,7 @@ public class DiceGame {
     private int targetScore = 30;
 
     public DiceGame() {
-        player1 = PlayerFactory.create();
+        player1 = PlayerFactory.create(); // whenever DiceGame needs a player, it asks the factory to create one
         player2 = PlayerFactory.create();
         player1.setName("Player 1");
         player2.setName("Player 2");
