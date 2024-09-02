@@ -1,13 +1,13 @@
 package com.cbfacademy;
 
-public class DiceGame {
-    private DicePlayer player1;
-    private DicePlayer player2;
+public class DiceGame implements Game {
+    private Player player1;
+    private Player player2;
     private int targetScore = 30;
 
-    public DiceGame() {
-        player1 = PlayerFactory.create(); // whenever DiceGame needs a player, it asks the factory to create one
-        player2 = PlayerFactory.create();
+    public DiceGame(Player player1, Player player2) { // change the constructor to accept Player objects
+        this.player1 = player1;
+        this.player2 = player2;
         player1.setName("Player 1");
         player2.setName("Player 2");
     }
