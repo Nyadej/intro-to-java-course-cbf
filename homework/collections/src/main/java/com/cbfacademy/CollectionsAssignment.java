@@ -1,8 +1,8 @@
 package com.cbfacademy;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CollectionsAssignment {
 
@@ -15,8 +15,11 @@ public class CollectionsAssignment {
      * @param minValue the minimum value to retain
      */
     public static void removeSmallInts(List<Integer> list, int minValue) {
-        // Your solution must traverse the list from last to first element
-        // removing any values less than minValue.
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (list.get(i) < minValue) {
+                list.remove(i);
+            }
+        }
     }
 
     /**
@@ -27,8 +30,8 @@ public class CollectionsAssignment {
      * @return true if integers contains duplicates, false otherwise
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
-        // Your solution must not use any loops.
-        return false;
+        // compare the size of the integers with the size after removing duplicates
+        return integers.size() != integers.stream().distinct().count();
     }
 
     /**
@@ -47,8 +50,14 @@ public class CollectionsAssignment {
      * collection.
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
-        // This must be done with no loops.
-        return new ArrayList<Integer>();
+        // combine both collections
+        return Stream.concat(ints1.stream(), ints2.stream())
+                // remove duplicates
+                .distinct()
+                // sort the list
+                .sorted()
+                // collect the final array list
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     /**
@@ -65,8 +74,12 @@ public class CollectionsAssignment {
      * collections.
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
-        // This must be done with no loops.
-        return new ArrayList<>();
+        return ints1.stream()
+                // keep only numbers in both collections
+                .filter(ints2::contains)
+                .distinct()
+                .sorted()
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     /**
