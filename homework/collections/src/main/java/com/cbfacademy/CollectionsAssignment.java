@@ -1,6 +1,7 @@
 package com.cbfacademy;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -93,12 +94,16 @@ public class CollectionsAssignment {
      * @return the most frequently occurring String
      */
     public static String mostFrequent(List<String> list) {
-        // You should solve this problem in two stages: First iterate through
-        // the list to count occurrences of each String. Then iterate through
-        // your counts to find the largest. You'll need a collection that allows
-        // you to store a mapping from Strings to counts.
-        // No nested loops or non-enhanced for-loops are allowed.
-        return "";
+        if (list.isEmpty()) {
+            return "";
+        }
+
+        return list.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())) // count frequencies
+                .entrySet().stream() // stream the map entries
+                .max(Map.Entry.comparingByValue()) // find the entry with max count
+                .get() // get the max entry
+                .getKey(); // return most frequently occurring string
     }
 
     public static String getName() {
