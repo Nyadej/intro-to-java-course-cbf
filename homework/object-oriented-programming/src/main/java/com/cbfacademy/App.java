@@ -1,7 +1,10 @@
 package com.cbfacademy;
 
+import com.cbfacademy.words.ReverseCharSequence;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ReverseCharSequence reverse = new ReverseCharSequence("hello");
+        System.out.println(reverse);
     }
 }
